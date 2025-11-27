@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <p class="h4">Todas las mascotas</p>
+            <a routerLink="../add" class="btn btn-outline-primary rounded-pill" tabindex="-1" role="button" aria-disabled="true"><i class="bi bi-plus"></i> Agregar mascota</a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card border-0 shadow">
+            <div class="card-body m-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of petList; index as i">
+                            <th scope="row">{{ row.id }}</th>
+                            <td>{{ row.name }}</td>
+                            <td>{{ row.petBreed.name }}</td>
+                            <td>{{ row.age }}</td>
+                            <td>
+                                <button type="button" class="btn btn-link link-primary" (click)="onEditRow(row)"><i class="bi bi-pencil-square"></i></button>
+                                <button type="button" class="btn btn-link link-danger" (click)="onDeleteRow(row)"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
