@@ -12,7 +12,8 @@
                         </div>
                         <div class="col">
                             <label for="" class="form-label">Raza</label>
-                            <select formControlName="pet_breed" class="form-select" placeholder="Seleccione...">
+                                <select formControlName="pet_breed" class="form-select">
+                                <option value="" disabled selected>Seleccione...</option>
                                 <option *ngFor="let item of listBreedsPet" [value]="item.id">{{item.name}}</option>
                             </select>
                         </div>

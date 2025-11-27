@@ -37,13 +37,14 @@ export class PetsListComponent implements OnInit{
 
   onDeleteRow(row) {
     if (window.confirm("¿Está seguro que desea eliminar esta mascota?" + row.name)) {
-        this.petsService.deletePetById(row.id).subscribe(result => {
-            console.log('deletePetById response', result)
-            alert('La mascota ha sido eliminada correctamente!');
-            this.listPets();
-        },error => {
-            alert('Ocurrió un error al eliminar la mascota!' + error);
-        });
-      }
+      
+      this.petsService.deletePetById(row.id).subscribe(result => {
+        console.log('deletePetById response', result)
+        alert('La mascota ha sido eliminada correctamente!');
+        this.listPets();
+      }, error => {
+        alert('Ocurrió un error al eliminar la mascota!' + error);
+      });
+    }
   }
 }

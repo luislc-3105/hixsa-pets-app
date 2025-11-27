@@ -3,25 +3,30 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-/*
+
 .btn-primary {
-    background-color: #ffe521;
-    border-color: #ffe521;
+    background-color: #7e15e1;
+    border-color: #7e15e1;
 }
 
 .btn-primary:hover {
-    background-color: #ffdb29;
-    border-color: #ffdb29;
+    background-color: #6413af;
+    border-color: #6413af;
 }
 
+
 .btn-primary:disabled {
-    background-color: #fff39b;
-    border-color: #fff39b;
+    background-color: #987bb3;
+    border-color: #987bb3;
     opacity: 0.65;
 }
 
 .btn-primary:active {
-    background-color: #ffdb29!important;
-    border-color: #aa5fca!important;
+    background-color: #7e15e1!important;
+    border-color: #7e15e1!important;
 }
-    */
+
+
+.text-primary {
+    color: #7e15e1!important;
+}

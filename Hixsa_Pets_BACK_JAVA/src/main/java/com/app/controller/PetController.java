@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class PetController {
         return petService.findAll();
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<?> saveOrUpdatePet(@RequestBody PetEntity pet){
         try {
             PetEntity petEntity = petService.saveOrUpdate(pet);
@@ -38,7 +39,8 @@ public class PetController {
     public ResponseEntity<?> deletePet(@RequestParam Long id){
         try {
             petService.detelePetById(id);
-            return new ResponseEntity<String>("DELETED", HttpStatus.OK);
+            String message = "DELETED";
+            return ResponseEntity.ok(Collections.singletonMap("message", message));
         }
         catch (Exception e){
             return new ResponseEntity<String>("BAD REQUEST",HttpStatus.BAD_REQUEST);
